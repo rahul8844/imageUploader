@@ -1,4 +1,5 @@
 import React, { useState, useCallback, useEffect, useContext, useRef, useMemo } from 'react';
+import Loader from '../Loader';
 import { FileDropContext } from '../FileUploaderContext/FileDropContextWrapper';
 import { useUploadScheduler } from '../../hooks/useUploadScheduler';
 import { validateFile } from '../../constants/utils';
@@ -189,7 +190,7 @@ const FileUploader: React.FC = () => {
       )}
 
       <div className="uploader-content-wrapper">
-        <React.Suspense fallback={<div>Loading...</div>}>
+        <React.Suspense fallback={<Loader text="Loading DropZone..." />}>
           <DropZone
             onFileSelect={handleFileSelect}
             onFileDropped={processFiles}
@@ -231,8 +232,9 @@ const FileUploader: React.FC = () => {
               </button>
             </div>
 
+            {/* {uploadedFiles.length !== successCount ? ( */}
             <div className="uploaded-files-grid">
-              <React.Suspense fallback={<div>Loading files...</div>}>
+              <React.Suspense fallback={<Loader text="Loading uploaded files..." />}>
                 {sortedFiles.map((uploadedFile) => (
                   <FileCard key={uploadedFile.id} file={uploadedFile} onReUpload={reuploadFile} />
                 ))}
