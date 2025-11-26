@@ -22,7 +22,6 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
-.env
 
 # vuepress build output
 .vuepress/dist

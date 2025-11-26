@@ -9,7 +9,7 @@ A modern, responsive image uploader component built with React, TypeScript, and 
 -   **Progress Tracking**: Real-time upload progress for individual files and overall batch.
 -   **Cloudinary Integration**: Direct secure uploads to Cloudinary.
 -   **Mobile Friendly**: Responsive design with specific mobile gallery access.
--   **Virtualization**: Efficient rendering of large file lists using `react-window`.
+-   **Internet Connection Alerts**: Automatic detection and alerts for internet connection loss/restoration with auto-retry for failed uploads.
 -   **Retry Mechanism**: Easily retry failed uploads.
 
 ## Prerequisites
@@ -73,4 +73,3 @@ npm run lint
 -   [TypeScript](https://www.typescriptlang.org/)
 -   [Vite](https://vitejs.dev/)
 -   [Cloudinary](https://cloudinary.com/)
--   [react-window](https://github.com/bvaughn/react-window)

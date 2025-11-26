@@ -1,4 +1,5 @@
 import { Suspense, lazy } from 'react';
+import Loader from './components/Loader/Loader';
 import './App.css';
 
 // Lazy load the FileUploader component for code splitting
@@ -7,12 +8,7 @@ const FileUploaderContext = lazy(() => import('./components/FileUploaderContext'
 
 const App = () => (
   <div className="app" id="app">
-    <Suspense fallback={
-      <div className="loading-container">
-        <div className="loader"></div>
-        <p>Loading uploader...</p>
-      </div>
-    }>
+    <Suspense fallback={<Loader text="Loading App..." />}>
       <FileUploaderContext>
         <FileUploader />
       </FileUploaderContext>

@@ -83,6 +83,12 @@
     .toast {
         min-width: auto;
         width: calc(100% - 32px);
+        top: auto;
         bottom: 16px;
+        padding: 16px;
+    }
+
+    .toast.show {
+        transform: translateX(-50%) translateY(0);
     }
 }
