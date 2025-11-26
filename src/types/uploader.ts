@@ -1,10 +1,16 @@
+import type { UploadedFile } from "./files";
+
 export interface IMobileGalleryUploader {
     onFileSelect: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
-export interface FileUploaderProps {
-    onFilesSelected?: (files: File[]) => void;
-    onUpload?: (file: File, onProgress: (progress: number) => void) => Promise<void>;
-    maxFiles?: number;
-    autoUpload?: boolean;
+export interface IDropZoneProps {
+    hasFiles: boolean;
+    onFileSelect: (e: React.ChangeEvent<HTMLInputElement>) => void;
+    onFileDropped: (files: FileList) => void;
+}
+
+export interface FileDropContextType {
+    uploadedFiles: UploadedFile[];
+    setUploadedFiles: React.Dispatch<React.SetStateAction<UploadedFile[]>>;
 }

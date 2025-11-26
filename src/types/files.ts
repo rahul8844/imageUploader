@@ -11,13 +11,5 @@ export interface UploadedFile {
 
 export interface FileCardProps {
     file: UploadedFile;
-    onRemoveFile: (id: string) => void;
-    onRetryUpload?: (id: string) => void;
-}
-
-
-export interface IDropZoneProps {
-    hasFiles: boolean;
-    onFileSelect: (e: React.ChangeEvent<HTMLInputElement>) => void;
-    onFileDropped: (files: FileList) => void;
+    onReUpload?: (file: UploadedFile) => void;
 }

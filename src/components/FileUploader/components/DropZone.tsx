@@ -1,6 +1,6 @@
 import { useCallback, useRef, useState } from "react";
-import type { IDropZoneProps } from "../types/files";
-import './FileUploader.css';
+import type { IDropZoneProps } from "../../../types/uploader";
+import '../FileUploader.css';
 
 const DropZone: React.FC<IDropZoneProps> = (props) => {
   const { hasFiles = false, onFileSelect, onFileDropped } = props;
@@ -52,6 +52,7 @@ const DropZone: React.FC<IDropZoneProps> = (props) => {
       onDragLeave={handleDragLeave}
       onDrop={handleDrop}
       onClick={handleClick}
+      id="drop-zone"
     >
       <div className="drop-zone-content">
         <div className="upload-icon">

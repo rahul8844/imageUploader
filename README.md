@@ -1,73 +1,76 @@
-# React + TypeScript + Vite
+# Image Uploader
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, responsive image uploader component built with React, TypeScript, and Vite. Features Cloudinary integration for secure image hosting.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+-   **Drag & Drop Interface**: Intuitive file selection.
+-   **Multi-file Upload**: Support for batch uploads.
+-   **Progress Tracking**: Real-time upload progress for individual files and overall batch.
+-   **Cloudinary Integration**: Direct secure uploads to Cloudinary.
+-   **Mobile Friendly**: Responsive design with specific mobile gallery access.
+-   **Virtualization**: Efficient rendering of large file lists using `react-window`.
+-   **Retry Mechanism**: Easily retry failed uploads.
 
-## React Compiler
+## Prerequisites
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Before you begin, ensure you have the following installed:
 
-## Expanding the ESLint configuration
+-   **Node.js**: Version 18 or higher is recommended.
+    -   [Download Node.js](https://nodejs.org/)
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Installation
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+1.  **Clone the repository** (if applicable) or navigate to the project directory.
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+2.  **Install dependencies**:
+    ```bash
+    npm install
+    ```
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## Configuration
+
+Create a `.env` file in the root directory and add your Cloudinary credentials:
+
+```env
+VITE_CLOUDINARY_CLOUD_NAME=your_cloud_name
+VITE_CLOUDINARY_UPLOAD_PRESET=your_upload_preset
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+> **Note**: You can find these credentials in your Cloudinary Dashboard settings.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## Running Locally
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+To start the development server:
+
+```bash
+npm run dev
 ```
+
+The application will be available at `http://localhost:5173` (or the port shown in your terminal).
+
+## Building for Production
+
+To build the application for production:
+
+```bash
+npm run build
+```
+
+The build artifacts will be stored in the `dist/` directory.
+
+## Linting
+
+To run the linter and check for code quality issues:
+
+```bash
+npm run lint
+```
+
+## Technologies Used
+
+-   [React](https://react.dev/)
+-   [TypeScript](https://www.typescriptlang.org/)
+-   [Vite](https://vitejs.dev/)
+-   [Cloudinary](https://cloudinary.com/)
+-   [react-window](https://github.com/bvaughn/react-window)
