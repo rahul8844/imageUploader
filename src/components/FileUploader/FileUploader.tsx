@@ -1,4 +1,4 @@
-import React, { useState, useCallback, useEffect, useContext, useRef, useMemo } from 'react';
+import React, { useState, useCallback, useEffect, useContext, useRef } from 'react';
 import Loader from '../Loader';
 import { FileDropContext } from '../FileUploaderContext/FileDropContextWrapper';
 import { useUploadScheduler } from '../../hooks/useUploadScheduler';
